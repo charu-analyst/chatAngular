@@ -22,7 +22,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   messages: Message[] = [
     { id: 1, text: 'Hey! How can I help you today?', sender: 'other', timestamp: '10:30 AM' },
     { id: 2, text: 'I need help with my biodata template', sender: 'user', timestamp: '10:31 AM' },
-    { id: 3, text: 'Sure! I can help you customize your template. What would you like to change?', sender: 'other', timestamp: '10:32 AM' },
+    { id: 3, text: 'Sure! I can help you customize your template. What would you like to change?', sender: 'other', timestamp: '10:32 AM' }
   ];
 
   newMessage: string = '';
