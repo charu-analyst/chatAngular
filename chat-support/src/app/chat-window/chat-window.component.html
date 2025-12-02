@@ -1,0 +1,57 @@
+<div class="chat-window">
+  <!-- Header -->
+  <div class="chat-header">
+    <div class="header-left">
+      <div class="avatar">💬</div>
+      <div>
+        <div class="header-title">Support Chat</div>
+        <div class="header-subtitle">Always here to help</div>
+      </div>
+    </div>
+    <div class="status-indicator">
+      <div class="online-dot"></div>
+      <span>Online</span>
+    </div>
+  </div>
+
+  <!-- Messages List -->
+  <div class="message-list" #messagesList>
+    <div *ngFor="let message of messages" 
+         [ngClass]="{'message-item': true, 'user': message.sender === 'user', 'other': message.sender === 'other'}">
+      <div class="message-bubble">
+        <p class="message-text">{{ message.text }}</p>
+        <span class="message-time">{{ message.timestamp }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Input Area -->
+  <div class="input-row">
+    <button class="action-btn" title="Attach file">
+      <span>📎</span>
+    </button>
+
+    <textarea
+      [(ngModel)]="newMessage"
+      (keypress)="handleKeyPress($event)"
+      placeholder="Type your message..."
+      class="message-input"
+      rows="1"
+    ></textarea>
+
+    <button class="action-btn" title="Emoji">
+      <span>😊</span>
+    </button>
+
+    <button 
+      (click)="sendMessage()" 
+      [disabled]="!newMessage.trim()"
+      class="send-btn"
+      title="Send message"
+    >
+      ✈️
+    </button>
+  </div>
+
+  <div class="input-hint">Press Enter to send, Shift+Enter for new line</div>
+</div>
