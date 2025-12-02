@@ -6,6 +6,7 @@ describe('ChatWindow', () => {
   let component: ChatComponent;
   let fixture: ComponentFixture<ChatComponent>;
 
+  
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ChatComponent]
